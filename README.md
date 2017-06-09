@@ -11,7 +11,7 @@ There should be only a single alert & backtonormal email pair per hunger period.
 
 # my approach
 
-i used 2 AWS Lambda functions that writes and read data from an ElastiCash database powered by redis.
+I used 2 AWS Lambda functions that writes and reads data from an ElastiCash database powered by redis.
 
 ![alt text](https://github.com/ofirDubi/DynamicYiled_Challenge/blob/master/flow.png)
 
@@ -47,4 +47,3 @@ I wont have time to implement this solution, because i have a bagrut next week.
 
 Thanks for the cool challenge :)
 
-ofir.
