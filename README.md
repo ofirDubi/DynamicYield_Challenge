@@ -35,15 +35,15 @@ it also updates the cat's hunger status on ElastiCash if necessary.
 
 # Some thoughts 
 
-right now, the mail-sending system is not perfect. Because isFed is only called once every 15 minutes, then it wont send an email as soon as the cat is hungry. for example:
+right now, the mail-sending system is not perfect. isFed is only called once every 15 minutes, so it wont send an email exactly when the cat turns hungry. for example:
 if isFed runs every 15 minutes starting from minute 0, and the cat has been fed in minute 5, at the 15 minute mark when isFed will run 
-the function won't send an alert email because the cat is not hungry. The cat will be hungry at 20 min, but a notification will, only be sent in min 30.
+the function won't send an alert email because the cat is not hungry yet. The cat will be hungry at 20 min, but a notification will be sent in min 30 - 10 minutes after the cat turns hungry.
 
 A possible solution to this problem is to create a scheduled event on Amazon CloudWatch and attach it as a trigger to isFed every time checkFood is called. This can be implemented by using the aws-sdk.  
 every time checkFood is called, it will create a new event that will overwrite the last event created.
 That way, isFed will be called when the cat is hungry.
 
-I wont have time to implement this solution, because i have a bagrut next week.
+I wont have time to implement this solution, because i have a bagrut next week and i need to study :(
 
 Thanks for the cool challenge :)
 
